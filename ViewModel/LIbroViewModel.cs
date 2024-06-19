@@ -1,0 +1,34 @@
+﻿using JulianaSosaLibromvvm.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace JulianaSosaLibromvvm.ViewModel
+{
+    public class LibroViewModel : INotifyPropertyChanged
+    {
+        private Libro _libro
+        {
+            get { return _libro; }
+            set
+            {
+                _libro = value;
+                OnPropertyChanged(nameof(Libro));
+            }
+        }
+
+     
+        public List<Libro> Libros { get; set; }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+    }
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JulianaSosaLibromvvm.Views.LibrosPage"
+             xmlns:viewModels="clr-namespace:JulianaSosaLibromvvm.ViewModel;assembly=JulianaSosaLibromvvm"
+             Title="LibrosPage">
+
+    <ContentPage.BindingContext>
+
+        <viewModels:LibroViewModel/>
+
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <ListView ItemsSource="{Binding Libros}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Label Text="{Binding Titulo}" FontSize="Title" />
+                        <Label Text="{Binding Autor}"/>
+
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView> 
+       
+        
+    </StackLayout>
+</ContentPage>
